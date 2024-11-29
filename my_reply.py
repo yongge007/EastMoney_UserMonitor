@@ -114,7 +114,7 @@ def send_msg_to_feishu_bot(reply_list):
             if source_reply_text != "":
                 source_reply_user_text =  f"@{source_reply_user_nickname}: {source_reply_text}"
 
-                if source_reply_text == "图片评论":
+                if reply_text == "图片评论":
                     reply_user_text = f"@{reply_user_nickname}:{reply_text}:{reply_picture}"
                 else:
                     reply_user_text = f"@{reply_user_nickname}:{reply_text}"
