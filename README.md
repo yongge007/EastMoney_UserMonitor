@@ -13,3 +13,10 @@ https://caifuhao.eastmoney.com/gbapi/AuthorCFHList?listName=web&ps=6&p=1&uid=449
     
   }
 </script>
+
+## Crontab 设置
+
+```bash
+*/3 * * * * nohup ~/anaconda3/bin/python ~/Documents/Workspace/github/eastmoney_monitor/my_reply.py >> ~/reply.log 2>&1 &
+*/3 * * * * nohup ~/anaconda3/bin/python ~/Documents/Workspace/github/eastmoney_monitor/my_post.py >> ~/post.log 2>&1 &
+```
