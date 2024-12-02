@@ -19,7 +19,7 @@ headers = {
 }
 
 def query_fullarticle_data_from_eastmoney(pageindex):
-    url = "https://i.eastmoney.com/api/guba/fullarticlelist"
+    url = config.get("article_list_url")
 
     # 获取当前时间的时间戳（秒）
     current_timestamp = time.time()
@@ -92,8 +92,9 @@ def send_msg_to_feishu_bot(new_fullarticle_list):
         post_guba_name = post.get('post_guba').get('stockbar_name')
         post_guba_stockbar_code = post.get('post_guba').get('stockbar_code')
 
+        article_detail_url = config.get('article_detail_url')
+        url = f"{article_detail_url}/{post_id}"
         
-        url = f"https://caifuhao.eastmoney.com/news/{post_id}"
         fullarticle_text = fetch_article_text(url)
 
         msg = f"🌶🌶🌶长文更新：{post_id}\n帖子标题：{post_title}\n帖子内容摘要：{post_content}\n帖子图片：{post_pic_url}\n发布时间：{post_publish_time}\n发布用户：{post_user_nickname}\n股吧：{post_guba_name}({post_guba_stockbar_code})\n长文内容：{fullarticle_text}"
