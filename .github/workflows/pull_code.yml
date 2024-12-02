@@ -1,0 +1,13 @@
+name: pull-code-on-master-update
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  pull_code:
+    runs-on: self-hosted
+    steps:
+      - name: Pull latest code
+        run: cd /Users/rgc/Documents/Workspace/github/eastmoney_monitor && git pull origin master
