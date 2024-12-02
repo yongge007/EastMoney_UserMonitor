@@ -19,7 +19,7 @@ headers = {
 }
 
 def query_post_data_from_eastmoney(pageindex):
-    url = config['art_url']
+    url = config['post_url']
 
     # 获取当前时间的时间戳（秒）
     current_timestamp = time.time()
