@@ -123,7 +123,7 @@ def send_msg_to_feishu_bot(reply_list):
                 source_reply_user_text =  ""
 
             feishu_doc_bot_url = config['feishu_doc_bot_url']
-            text = f"{reply_id}#{reply_guba}#{reply_publish_time}#{reply_user_text}#{source_reply_user_text}#{source_post_title}#{source_reply_time}"
+            text = f"💥💥💥评论更新：{reply_id}#{reply_guba}#{reply_publish_time}#{reply_user_text}#{source_reply_user_text}#{source_post_title}#{source_reply_time}"
             print(f"Post Text: {text}")
             payload = {
                 "text": text
