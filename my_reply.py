@@ -132,15 +132,16 @@ def send_msg_to_feishu_bot(reply_list):
             if response.status_code != 200:
                 print(f"Failed to send message to Feishu Doc bot: {response.status_code}, {response.text}")
 
-
             feishu_teamchat_bot_url = config['feishu_teamchat_bot_url']
-            noti_text = (f"💥💥💥评论更新：Reply ID:{reply_id}\n"
-                        f"Reply Guba:{reply_guba}\n"
-                        f"Reply Publish Time:{reply_publish_time}\n"
-                        f"Reply Text:{reply_user_text}\n"
-                        f"Source Reply Text: {source_reply_user_text}\n"
-                        f"Source Post Title:{source_post_title}\n"
-                        f"Source Reply Time:{source_reply_time}")
+
+            noti_text = (f"💥💥💥评论有更新！💥💥💥\n"
+                        f"评论ID:{reply_id}\n"
+                        f"股吧:{reply_guba}\n"
+                        f"发布时间:{reply_publish_time}\n"
+                        f"评论内容:{reply_user_text}\n"
+                        f"源评论内容: {source_reply_user_text}\n"
+                        f"源评论标题:{source_post_title}\n"
+                        f"源评论时间:{source_reply_time}\n")
             
             chat_headers = {
                 "Content-Type": "application/json"

@@ -92,7 +92,14 @@ def send_msg_to_feishu_bot(new_post_list):
         post_guba_name = post.get('post_guba').get('stockbar_name')
         post_guba_stockbar_code = post.get('post_guba').get('stockbar_code')
 
-        msg = f"⭐️⭐️⭐️主帖更新：{post_id}\n帖子标题：{post_title}\n帖子内容：{post_content}\n帖子图片：{post_pic_url}\n发布时间：{post_publish_time}\n发布用户：{post_user_nickname}\n股吧：{post_guba_name}({post_guba_stockbar_code})\n"
+        msg = (f"⭐️⭐️⭐️主帖有更新！⭐️⭐️⭐️\n"
+              f"帖子ID：{post_id}\n"
+              f"帖子标题：{post_title}\n"
+              f"帖子内容：{post_content}\n"
+              f"帖子图片：{post_pic_url}\n"
+              f"发布时间：{post_publish_time}\n"
+              f"发布用户：{post_user_nickname}\n"
+              f"股吧：{post_guba_name}({post_guba_stockbar_code})\n")
 
         url = config['feishu_teamchat_bot_url']
         data = {
